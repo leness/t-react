@@ -1,6 +1,8 @@
+import { Button } from '@material-ui/core';
+// import { Button } from "./components/Footer/styled";
+
 import Footer from "./components/Footer";
 import Information from "./components/Information";
-import { Button } from "./components/Footer/styled";
 
 const CAT_IMAGE_SRC = 'https://ichef.bbci.co.uk/news/976/cpsprodpb/12A9B/production/_111434467_gettyimages-1143489763.jpg'
 
@@ -12,10 +14,13 @@ function App() {
         <img src={CAT_IMAGE_SRC} alt="cat" width="200" />
       </div>
       
-      <Button primary>
+      <Button variant="contained">
         Play with cat
       </Button>
-      <Information>
+      <Information handlersPull={{
+        onClick: () => alert('clicked'),
+        onHover: () => console.log('hovered'),
+      }} >
         <h1>My plan!</h1>
          <ul>
                 <li>Learn react</li>
